@@ -1,0 +1,43 @@
+.btn-red {
+  background-color: var(--clr-primary-500);
+  color: var(--clr-neutral-300);
+  box-shadow: 0 5px 3px -4px var(--clr-neutral-400);
+  &:hover {
+    background-color: transparent;
+
+    color: var(--clr-primary-500);
+    border: 1px solid var(--clr-primary-500);
+  }
+}
+
+.btn-blue {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-300);
+  box-shadow: 0 5px 3px -4px var(--clr-neutral-400);
+  &:hover {
+    background-color: transparent;
+
+    color: var(--clr-primary-400);
+    border: 1px solid var(--clr-primary-400);
+  }
+}
+
+.btn-gray {
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-500);
+  box-shadow: 0 5px 3px -4px var(--clr-neutral-400);
+  &:hover {
+    background-color: transparent;
+
+    color: var(--clr-neutral-500);
+    border: 1px solid var(--clr-neutral-500);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  background-clip: border-box;
+  color: var(--clr-neutral-300);
+  border: 15px solid var(--clr-neutral-300);
+  border-width: 2px;
+}

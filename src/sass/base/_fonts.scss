@@ -1,30 +1,33 @@
 $size: (
   small: (
-    h1: 2.5rem,
-    h2: 2rem,
-    h3: 4rem,
-    h4: 1.2rem,
-    p: 1.2rem,
-    a: 1.5rem,
+    h1: 1.5rem,
+    h2: 1.15rem,
+    h3: 1.18rem,
+    h4: 1.12rem,
+    h5: 1.18rem,
+    h6: 1.12rem,
+    p: 0.75rem,
+    a: 0.75rem,
+    strong: 1rem,
+    small: 0.75rem,
   ),
-  medium: (
-    h1: 5rem,
-    h2: 2.5rem,
-    h3: 5rem,
-    h4: 2rem,
-    p: 1.5rem,
+  large: (
+    h1: 2.25rem,
+    h2: 1.5rem,
+    h3: 1.5rem,
+    h4: 1.5rem,
+    h5: 1.5rem,
+    h6: 1.5rem,
+    p: 1rem,
+    a: 0.75rem,
+    strong: 1rem,
+    small: 0.75rem,
   ),
 );
 
 $weight: (
   primary: (
+    400: 400,
     500: 500,
-    600: 600,
-    700: 700,
-  ),
-  accent: (
-    500: 500,
-    600: 600,
-    700: 700,
   ),
 );
