@@ -1,0 +1,43 @@
+@use "../components/buttons" as *;
+
+.extension {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  &__heading {
+    color: var(--clr-neutral-500);
+  }
+
+  &__text {
+    color: var(--clr-neutral-400);
+  }
+
+  &__grid-tab {
+    padding: 2.5em 1.25em 1.25em 1.25em;
+
+    background-image: url("../images/bg-dots.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 75%;
+
+    box-shadow: 0 5px 16px -10px var(--clr-neutral-500);
+    border-radius: 10px;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+    strong {
+      color: var(--clr-neutral-500);
+    }
+    small {
+      color: var(--clr-neutral-400);
+    }
+    a {
+      @extend .btn-blue;
+      padding-inline: 3em;
+      margin-top: 2em;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@use "../components/buttons" as *;
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25em;
+
+  text-align: center;
+
+  &__heading {
+    color: var(--clr-neutral-600);
+  }
+  &__text {
+    color: var(--clr-neutral-400);
+  }
+
+  &__tab--menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+
+    .features__tab--menu-item {
+      padding-block: 1em;
+      position: relative;
+    }
+
+    li:nth-of-type(odd) {
+      border-top: 1px solid var(--clr-neutral-350);
+      border-bottom: 1px solid var(--clr-neutral-350);
+    }
+  }
+  input {
+    display: none;
+
+    &:checked ~ label {
+      &::after {
+        content: "";
+        position: absolute;
+        inset: auto 5.5rem 0 5.5rem;
+        border: 2px solid var(--clr-primary-500);
+      }
+    }
+  }
+
+  &__tab {
+    display: none;
+    grid-auto-flow: row;
+    gap: 2em;
+
+    padding-block: 2em;
+
+    &--image {
+      position: relative;
+      padding-block: 1.75em;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: var(--clr-primary-400);
+        inset: 25% 3.25rem 0 -1.4rem;
+        border-top-right-radius: 6rem;
+        border-bottom-right-radius: 6rem;
+        z-index: -1;
+      }
+    }
+
+    text-align: center;
+    &--text {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      h3 {
+        color: var(--clr-neutral-600);
+      }
+      p {
+        color: var(--clr-neutral-400);
+      }
+      a {
+        @extend .btn-blue;
+        align-self: center;
+      }
+    }
+  }
+}

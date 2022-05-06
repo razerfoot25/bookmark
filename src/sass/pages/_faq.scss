@@ -1,0 +1,22 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  text-align: center;
+
+  &__heading {
+    color: var(--clr-neutral-500);
+    padding-inline: 0.5em;
+  }
+  &__text {
+    color: var(--clr-neutral-400);
+  }
+  &__accordion {
+    &-container {
+      text-align: left;
+    }
+    &-items {
+      border: 1px solid red;
+    }
+  }
+}

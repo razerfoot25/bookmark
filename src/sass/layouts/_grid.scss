@@ -1,0 +1,23 @@
+.hero {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2.5em;
+  &__image {
+    grid-row: 1;
+  }
+}
+
+.extension__grid {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2.5em;
+
+  padding-inline: 1em;
+
+  &-tab {
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    gap: 2em;
+  }
+}

@@ -2,7 +2,7 @@
 
 .container {
   max-width: 90rem;
-  padding: 1.5em 2em;
+  padding-inline: 1.25em;
   margin: 0 auto;
 }
 .spacer {
@@ -12,6 +12,7 @@
 }
 
 .btn {
-  padding: 1em 1.75em;
+  padding: 1em 1.5em;
   border-radius: 5px;
+  font-weight: var(--fw-primary-500);
 }
