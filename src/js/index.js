@@ -3,19 +3,21 @@ const logo = document.querySelector(".navigation__logo");
 const nav = document.querySelector(".navigation__menu-container");
 const menuCheck = document.querySelector("#hamburger");
 const featuresTabMenu = document.querySelector(".features__tab--menu");
-
 const radioButtons = document.querySelectorAll(".FeatureTabradio");
 
+const accordion = document.querySelectorAll(".faq__accordion-items--btn");
 menuCheck.addEventListener("change", (e) => {
   if (e.target.checked) {
     menuIcon.classList.add("icon-open");
     logo.classList.add("logo-open");
     nav.style.display = "flex";
+    document.body.style.overflowY = "hidden";
   } else {
     menuIcon.classList.remove("icon-open");
     logo.classList.remove("logo-open");
     nav.classList.remove("nav-open");
     nav.style.display = "none";
+    document.body.style.overflowY = "scroll";
   }
 });
 
@@ -31,3 +33,17 @@ const enableTab = (radioBtn, i) => {
 featuresTabMenu.addEventListener("click", (e) => {
   radioButtons.forEach(enableTab);
 });
+
+const openAccordion = (acc, i) => {
+  acc.addEventListener("click", (e) => {
+    e.target.classList.toggle("active");
+    let panel = e.target.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+};
+
+accordion.forEach(openAccordion);
