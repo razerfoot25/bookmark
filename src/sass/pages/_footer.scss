@@ -1,4 +1,5 @@
 @use "../components/buttons" as *;
+@use "../abstracts/breakpoints" as *;
 .footer {
   &__upper-bg {
     background-color: var(--clr-primary-400);
@@ -30,7 +31,7 @@
           position: relative;
 
           &:invalid {
-            border: 3px solid var(--clr-primary-500);
+            outline: 3px solid var(--clr-primary-500);
             z-index: 2;
             margin-bottom: 1.25em;
             & ~ label {
@@ -41,7 +42,7 @@
         label {
           display: none;
           position: absolute;
-          inset: 3.4rem 0 auto 0;
+          inset: 3.05rem -3px auto -3px;
           font-size: 0.75rem;
           font-weight: var(--fw-primary-500);
           padding: 0.5em 1em;
@@ -61,6 +62,24 @@
           @extend .btn-red;
 
           padding: 0.75em 2em;
+        }
+      }
+
+      @include breakpoint(large) {
+        padding-inline: 26.5em;
+        div {
+          flex-direction: row;
+          input {
+            &:invalid {
+              margin-bottom: 0;
+            }
+          }
+          label {
+            right: 10.3rem;
+          }
+          a {
+            display: inline;
+          }
         }
       }
     }
@@ -105,6 +124,9 @@
           color: var(--clr-neutral-300);
           text-transform: uppercase;
           letter-spacing: 0.15rem;
+          &:hover {
+            color: var(--clr-primary-500);
+          }
         }
       }
     }
@@ -120,11 +142,31 @@
         width: 25px;
         height: 25px;
         background-color: var(--clr-neutral-300);
+        cursor: pointer;
+        &:hover {
+          background-color: var(--clr-primary-500);
+        }
         &:nth-child(1) {
           mask-image: url("../images/icon-facebook.svg");
         }
         &:nth-child(2) {
           mask-image: url("../images/icon-twitter.svg");
+        }
+      }
+    }
+
+    @include breakpoint(large) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      padding: 2em 6em;
+      div {
+        flex-direction: row;
+        align-items: center;
+
+        ul {
+          flex-direction: row;
+          margin-inline: 2em;
         }
       }
     }

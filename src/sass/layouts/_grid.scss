@@ -1,8 +1,14 @@
+@use "../abstracts/breakpoints" as *;
 main {
   display: grid;
   gap: 6em;
   padding-top: 2.5em;
   margin-bottom: 6em;
+  @include breakpoint(large) {
+    padding-top: 4em;
+    gap: 7em;
+    margin-bottom: 7;
+  }
 }
 
 .hero {
@@ -12,13 +18,19 @@ main {
   &__image {
     grid-row: 1;
   }
+  @include breakpoint(large) {
+    grid-template-columns: repeat(2, 1fr);
+    &__image {
+      grid-column: 2;
+    }
+  }
 }
 
 .extension__grid {
   display: grid;
   grid-auto-flow: row;
   gap: 2.5em;
-
+  position: relative;
   padding-inline: 1em;
 
   &-tab {
@@ -26,5 +38,20 @@ main {
     grid-auto-flow: row;
     justify-items: center;
     gap: 2em;
+  }
+
+  @include breakpoint(large) {
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 2em 9em;
+
+    > div:nth-child(2) {
+      position: relative;
+      top: 3em;
+    }
+    > div:nth-child(3) {
+      position: relative;
+      top: 6em;
+    }
   }
 }

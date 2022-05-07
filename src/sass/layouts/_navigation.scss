@@ -1,7 +1,6 @@
 @use "../components/buttons" as *;
-#hamburger {
-  display: none;
-}
+@use "../abstracts/breakpoints" as *;
+
 .navigation {
   display: flex;
   flex-direction: column;
@@ -40,9 +39,7 @@
         display: block;
       }
 
-      li:nth-child(1),
-      li:nth-child(2),
-      li:nth-child(3) {
+      li:nth-of-type(-n + 3) {
         &::before {
           content: "";
           border: thin solid var(--clr-neutral-350);
@@ -102,6 +99,57 @@
         path {
           fill: var(--clr-neutral-500);
         }
+      }
+    }
+  }
+}
+
+.nav-open {
+  display: flex;
+}
+
+@include breakpoint(large) {
+  .navigation {
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding-inline: 6em;
+    &__menu-icon-container > * {
+      display: none;
+    }
+
+    &__menu-container {
+      display: block;
+      position: relative;
+      inset: unset;
+      padding: 0;
+      background-color: transparent;
+      ul:nth-child(1) {
+        display: flex;
+        gap: 2em;
+
+        li:nth-of-type(-n + 3) {
+          a {
+            color: var(--clr-neutral-500);
+            &:hover {
+              color: var(--clr-primary-500);
+            }
+          }
+          &::before,
+          &::after {
+            content: "";
+            border: 0;
+            position: relative;
+            inset: unset;
+          }
+        }
+        li:nth-child(4) a {
+          display: inline;
+          @include btn-red;
+        }
+      }
+      &-sm {
+        display: none;
       }
     }
   }

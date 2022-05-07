@@ -1,4 +1,4 @@
-@use "../abstracts/breakpoints";
+@use "../abstracts/breakpoints" as *;
 
 .container {
   max-width: 90rem;
@@ -11,8 +11,20 @@
   }
 }
 
+.px-5 {
+  @include breakpoint(large) {
+    padding-inline: 5em;
+  }
+}
+
+.px-6 {
+  @include breakpoint(large) {
+    padding-inline: 6em;
+  }
+}
 .btn {
   padding: 1em 1.5em;
   border-radius: 5px;
   font-weight: var(--fw-primary-500);
+  box-shadow: 0 5px 5px -4px var(--clr-neutral-400);
 }

@@ -1,4 +1,5 @@
 @use "../components/buttons" as *;
+@use "../abstracts/breakpoints" as *;
 .features {
   display: flex;
   flex-direction: column;
@@ -22,6 +23,11 @@
     .features__tab--menu-item {
       padding-block: 1em;
       position: relative;
+
+      label:hover {
+        color: var(--clr-primary-500);
+        cursor: pointer;
+      }
     }
 
     li:nth-of-type(odd) {
@@ -52,13 +58,16 @@
     &--image {
       position: relative;
       padding-block: 1.75em;
+      img {
+        width: 100%;
+      }
       &::after {
         content: "";
         position: absolute;
         background-color: var(--clr-primary-400);
         inset: 25% 3.25rem 0 -1.4rem;
-        border-top-right-radius: 6rem;
-        border-bottom-right-radius: 6rem;
+        border-top-right-radius: 8rem;
+        border-bottom-right-radius: 8rem;
         z-index: -1;
       }
     }
@@ -78,6 +87,51 @@
       a {
         @extend .btn-blue;
         align-self: center;
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    &__text {
+      padding-inline: 19em;
+    }
+
+    &__tab--menu {
+      flex-direction: row;
+      justify-content: center;
+
+      li:nth-of-type(n + 1) {
+        border-top: 0;
+        padding-inline: 2.5em;
+        border-bottom: 1px solid var(--clr-neutral-350);
+      }
+    }
+    input {
+      display: none;
+
+      &:checked ~ label {
+        &::after {
+          inset: auto 0 0 0;
+        }
+      }
+    }
+    &__tab {
+      grid-template-columns: repeat(2, 1fr);
+      text-align: left;
+      align-items: center;
+      &--image {
+        &::after {
+          inset: 30% 18% -4% -7rem;
+          border-top-right-radius: 10rem;
+          border-bottom-right-radius: 10rem;
+        }
+      }
+
+      &--text {
+        padding-inline: 4em;
+        a {
+          align-self: flex-start;
+        }
       }
     }
   }

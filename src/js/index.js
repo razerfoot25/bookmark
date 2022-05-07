@@ -1,24 +1,25 @@
 const menuIcon = document.querySelector(".navigation__menu-icon");
 const logo = document.querySelector(".navigation__logo");
 const nav = document.querySelector(".navigation__menu-container");
-const menuCheck = document.querySelector("#hamburger");
 const featuresTabMenu = document.querySelector(".features__tab--menu");
 const radioButtons = document.querySelectorAll(".FeatureTabradio");
-
 const accordion = document.querySelectorAll(".faq__accordion-items--btn");
-menuCheck.addEventListener("change", (e) => {
-  if (e.target.checked) {
-    menuIcon.classList.add("icon-open");
-    logo.classList.add("logo-open");
-    nav.style.display = "flex";
+
+document.body.style.overflowX = "hidden";
+
+const navOpen = () => {
+  menuIcon.classList.toggle("icon-open");
+  logo.classList.toggle("logo-open");
+  nav.classList.toggle("nav-open");
+  if (nav.classList.contains("nav-open")) {
     document.body.style.overflowY = "hidden";
   } else {
-    menuIcon.classList.remove("icon-open");
-    logo.classList.remove("logo-open");
-    nav.classList.remove("nav-open");
-    nav.style.display = "none";
     document.body.style.overflowY = "scroll";
   }
+};
+
+menuIcon.addEventListener("click", (e) => {
+  navOpen();
 });
 
 document.querySelector("[data-id='0']").style.display = "grid";

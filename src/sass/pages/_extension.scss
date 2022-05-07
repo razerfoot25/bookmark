@@ -1,5 +1,5 @@
 @use "../components/buttons" as *;
-
+@use "../abstracts/breakpoints" as *;
 .extension {
   text-align: center;
   display: flex;
@@ -38,6 +38,13 @@
       @extend .btn-blue;
       padding-inline: 3em;
       margin-top: 2em;
+    }
+  }
+
+  @include breakpoint(large) {
+    padding-bottom: 5em;
+    &__text {
+      padding-inline: 23em;
     }
   }
 }
