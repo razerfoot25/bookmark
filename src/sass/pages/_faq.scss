@@ -30,6 +30,9 @@
         padding: 1em 0;
         background-color: transparent;
         cursor: pointer;
+        &:hover {
+          color: var(--clr-primary-500);
+        }
         &::after {
           content: "";
           mask-image: url("../images/icon-arrow.svg");
@@ -62,7 +65,6 @@
 }
 
 .active {
-  color: var(--clr-primary-500);
   &::after {
     background-color: var(--clr-primary-500);
     transform: rotate(180deg);

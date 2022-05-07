@@ -50,6 +50,7 @@
 
   @include breakpoint(large) {
     &__text {
+      justify-content: center;
       align-items: flex-start;
       text-align: left;
     }
